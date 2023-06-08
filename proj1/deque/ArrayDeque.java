@@ -14,7 +14,7 @@ public class ArrayDeque<T> implements deque.Deque<T>{
         capacity=8;
     }
 private void resize(){
-        if (size==capacity){
+        if (size>=capacity){
         capacity=2*size;
         T[] a=(T[]) new Object[capacity];
         System.arraycopy(item,0,a,0,size);
