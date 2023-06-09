@@ -14,7 +14,7 @@ public class ArrayDeque<T> implements deque.Deque<T>{
         capacity=8;
     }
 private void resize(){
-        if (size>=capacity){
+        if (size==capacity-1){
         capacity=2*size;
         T[] a=(T[]) new Object[capacity];
         System.arraycopy(item,0,a,0,size);
@@ -49,7 +49,7 @@ private void resize(){
 
 @Override
     public T removeFirst() {
-        if (size==0){
+        if (isEmpty()){
             return null;
         }
         T first=get(0);
@@ -63,7 +63,7 @@ private void resize(){
 
 @Override
     public T removeLast() {
-    if (size==0){
+    if (isEmpty()){
         return null;
     }
         T last=get(size-1);
